@@ -1,0 +1,161 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+header {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 115px;
+    z-index: 10;
+    padding-left: 10%;
+    padding-top: 2%;
+    padding-right: 10%;
+    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/123024/menutexture.png);
+    background-position: center top;
+    background-size: auto 200px;
+    background-repeat: repeat-x;
+}
+
+.header .inner {
+    max-width: 1060px;
+    margin: 0 auto;
+    display: flex;
+    height: 70px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.logo {
+    display: block;
+    width: 5%;
+    left: 1%;
+    position: absolute;
+    background-color: white;
+    text-align: center;
+}
+
+.logo img {
+    width: 45px;
+    margin-top: 10px;
+}
+
+nav {
+    display: none;
+}
+
+nav a {
+    font-family: 'Arial', serif;
+    font-size: 12px;
+    color: #8c8c8e;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-decoration: none;
+    margin: 0 18px;
+}
+
+nav a.active,
+nav a:hover {
+    color: white;
+}
+
+.burger {
+    display: block;
+    position: relative;
+    top: -6px;
+    padding-left: 30px;
+}
+
+.burger:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30px;
+    height: 2px;
+    background: white;
+    box-shadow: 0 12px 0 0 white, 0 6px 0 0 white;
+}
+
+.donate-link {
+    width: 72px;
+    text-align: center;
+    position: absolute;
+    right: 10px;
+    top: 27px;
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-decoration: none;
+    padding-bottom: 6px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+@media screen and (min-width: 800px) {
+    nav {
+        display: block;
+    }
+    .burger {
+        display: none;
+    }
+}
+
+
+.slider {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background-color: black;
+}
+
+.slides {
+    display: flex;
+    transition: transform 1s ease-in-out;
+    height: 100vh;
+    width: 100%;
+}
+
+.slide {
+    min-width: 70vw;
+    height: 100vh;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pagination {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.pagination button {
+    width: 15px;
+    height: 15px;
+    background: #555;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.pagination button.active {
+    background: #fff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
